@@ -26,11 +26,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  var nuevoArray = [];
   for (var i = 0; i <array.length; i++ ) {
-    nuevoArray[i] = array[i] +1;
+     array[i]++;
   }
-  return nuevoArray;
+  return array;
 }
 
 
@@ -77,7 +76,7 @@ function agregarNumeros(numeros) {
   // Tu código:
   var total = 0;
   for(var i=0; i < numeros.length; i++) {
-    total = total + numeros[i]
+    total += numeros[i]
   }
   return total;
 }
@@ -90,7 +89,7 @@ function promedioResultadosTest(resultadosTest) {
   var resultado = 0
   var suma = 0;
   for(var i = 0; i < resultadosTest.length; i++) {
-    suma = suma + resultadosTest[i]
+    suma = suma + resultadosTest[i];
   }
   resultado = suma / resultadosTest.length
   return resultado
@@ -101,13 +100,14 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var numG = numeros[0]
-  for(var i = 0; i < numeros.length; i++) {
-    if(numG < numeros[i]){
-      numG = numeros[i]
-    }
-  }
-  return numG
+  //var numG = numeros[0]
+  //for(var i = 0; i < numeros.length; i++) {
+  //  if(numG < numeros[i]){
+  //    numG = numeros[i]
+  //  }
+  //}
+  //return numG
+  return Math.max.apply(null, numeros);
 }
 
 
@@ -115,6 +115,7 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  // arguments === abs = [8, 9, 4, 6, 15]
   if(arguments.length === 0){
     return 0
   }
@@ -132,6 +133,7 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+  // [31,15,18,19,50]
   var cont = 0
   for( var i = 0; i < arreglo.length; i++){
     if(arreglo[i] > 18){
@@ -159,6 +161,7 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  // Lo hacemos (string var num = n + "")
   var num = n + ""
   if(num.charAt(0) == 9){
     return true
